@@ -94,16 +94,19 @@ const responsive = {
     },
   ];
 
-  const product = productData.map(item => <Products item={item}/>)
+  const product = productData.map(item => <Products key={item.id} item={item}/>)
   
   return (
     <div className="w-9/12 mx-auto ">
-      <h1 className="text-center my-16">Poduct Carousel</h1>
+      <div className="my-16">
+        <h1 className="text-center ">Poducts</h1>
+        <button>Cart</button>
+      </div>
       <div>
         <Carousel
           responsive={responsive}
           renderArrowsWhenDisabled
-          removeArrowOnDeviceType={['mobile']}
+          removeArrowOnDeviceType={["mobile"]}
         >
           {product}
         </Carousel>
